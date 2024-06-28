@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <div v-if="home">
+    <div v-if="home" class="profile-container">
       <img :src="home.image" alt="Profile Image" class="profile-image">
       <h1>{{ home.name }} {{ home.surname }}</h1>
       <h2>{{ home.title }}</h2>
     </div>
-    <div v-else>
+    <div v-else class="loading">
       Loading...
     </div>
   </div>
@@ -13,6 +13,7 @@
 
 <script>
 import axios from 'axios';
+// import Navbar from '../components/NavbarComp.vue'
 
 export default {
   name: 'HomeView',
@@ -36,26 +37,47 @@ export default {
 <style scoped>
 .home {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('https://i.postimg.cc/pL2pKB9Y/home.png');
+  background-size: cover;
+  background-repeat: repeat-y;
+  text-align: center;
+}
+
+.profile-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 20px;
+  background: #d3cfde;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 300px;
+  height: 300px;
   margin-bottom: 20px;
 }
 
 h1 {
   font-size: 2.5em;
   margin: 10px 0;
+  color: #333;
 }
 
 h2 {
   font-size: 1.5em;
-  color: #42b983;
+  color: #806088;
+}
+
+.loading {
+  font-size: 1.5em;
+  color: #5d5d5d;
 }
 </style>
