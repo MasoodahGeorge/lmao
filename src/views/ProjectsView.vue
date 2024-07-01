@@ -98,7 +98,7 @@ h1 {
 }
 
 .project-card {
-  max-width: 300px;
+  width: 70%;
   margin: 0 10px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
