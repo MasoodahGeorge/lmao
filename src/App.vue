@@ -10,6 +10,30 @@
   </div>
   <!-- <router-view/> -->
 
+  <div id="app">
+    <section id="home-section">
+      <router-view name="home"></router-view>
+    </section>
+    <section id="about-section">
+      <router-view name="about"></router-view>
+    </section>
+    <section id="resume-section">
+      <router-view name="resume"></router-view>
+    </section>
+    <section id="skills-section">
+      <router-view name="skills"></router-view>
+    </section>
+    <section id="testimonials-section">
+      <router-view name="testimonials"></router-view>
+    </section>
+    <section id="projects-section">
+      <router-view name="projects"></router-view>
+    </section>
+    <section id="contact-section">
+      <router-view name="contact"></router-view>
+    </section>
+  </div>
+
 </template>
 
 <script>
@@ -18,7 +42,7 @@ import Navbar from './components/NavbarComp.vue';
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
   }
 };
 </script>
