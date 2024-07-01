@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" id="home">
     <div v-if="home" class="profile-container">
       <img :src="home.image" alt="Profile Image" class="profile-image">
       <h1>{{ home.name }} {{ home.surname }}</h1>
@@ -41,9 +41,9 @@ export default {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background-image: url('https://i.postimg.cc/pL2pKB9Y/home.png');
-  background-size: cover;
-  background-repeat: repeat-y;
+  /* background-image: url('https://i.postimg.cc/Jn3T2wbF/Untitled-design-10.png'); */
+  /* background-size: cover;
+  background-repeat: repeat-y; */
   text-align: center;
 }
 
@@ -51,12 +51,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #d3cfde;
+  background: rgba(243, 243, 243, 0.9);
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius:10px ;
 }
 
 .profile-image {
@@ -68,12 +69,12 @@ export default {
 h1 {
   font-size: 2.5em;
   margin: 10px 0;
-  color: #333;
+  color: rgb(72, 72, 72);
 }
 
 h2 {
   font-size: 1.5em;
-  color: #806088;
+  color: rgb(108, 108, 108);
 }
 
 .loading {

@@ -1,6 +1,8 @@
 <template>
-  <div class="about">
+  <div class="about" id="about">
     <div v-if="about" class="about-container">
+      <BR></BR>
+      <BR></BR>
       <h1>{{ about.heading }}</h1>
       <p>{{ about.description }}</p>
     </div>
@@ -37,12 +39,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 20px;
-  background-image: url('https://i.postimg.cc/pL2pKB9Y/home.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  /* background-image: url('https://i.postimg.cc/Jn3T2wbF/Untitled-design-10.png'); */
+  /* background-size: cover;
+  background-repeat: repeat-y; */
   text-align: center;
 }
 
@@ -50,7 +50,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(211, 207, 222, 0.9); /* slightly transparent background */
+  background: rgba(243, 243, 243, 0.9); /* slightly transparent background */
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

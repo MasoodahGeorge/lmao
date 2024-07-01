@@ -32,17 +32,22 @@
     <section id="contact-section">
       <router-view name="contact"></router-view>
     </section>
+
+    <FooterComp/>
   </div>
+
 
 </template>
 
 <script>
 import Navbar from './components/NavbarComp.vue';
+import FooterComp from './components/FooterComp.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    FooterComp
   }
 };
 </script>
@@ -55,6 +60,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color:#F3F3F3;
+  /* background-image: url('https://i.postimg.cc/XYTyBpTf/Untitled-design-8.png'); */
+  background-image: url('https://raw.githubusercontent.com/MasoodahGeorge/p3img/main/Untitled%20design%20(11).png');
+  /* background-size: cover; */
+  /* background-image: repeat; */
 }
 
 nav {

@@ -105,25 +105,25 @@ export default {
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a href="/" class="nav-link" exact>Home</a>
+                  <a href="#home" class="nav-link" exact>Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/about" class="nav-link">About</a>
+                  <a href="#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/resume" class="nav-link">Resume</a>
+                  <a href="#resume" class="nav-link">Resume</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/skills" class="nav-link">Skills</a>
+                  <a href="#skills" class="nav-link">Skills</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/testimonials" class="nav-link">Testimonials</a>
+                  <a href="#testimonials" class="nav-link">Testimonials</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/projects" class="nav-link">Projects</a>
+                  <a href="#projects" class="nav-link">Projects</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/contact" class="nav-link">Contact</a>
+                  <a href="#contact" class="nav-link">Contact</a>
                 </li>
               </ul>
             </div>
@@ -163,7 +163,7 @@ export default {
 }
 
 .nav-link:hover {
-  color: #806088;
+  color: #F1BA9C;
   transform: scale(1.1);
 }
 </style>

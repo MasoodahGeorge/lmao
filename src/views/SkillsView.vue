@@ -1,11 +1,18 @@
 <template>
-    <div class="skills">
-      <h1>{{ skills.heading }}</h1>
+    <div class="skills" id="skills">
+      <BR></BR>
+      <BR></BR>
+      <BR></BR>
+      <BR></BR>
       <div class="skills-container">
+        <BR></BR>
+        <h1>{{ skills.heading }}</h1>
+        <div class="skills-cont">
         <div v-for="skill in skills.items" :key="skill.name" class="skill-item">
           <img :src="skill.image" :alt="skill.name" class="skill-image" />
           <p class="skill-name">{{ skill.name }}</p>
         </div>
+      </div>
       </div>
     </div>
 </template>
@@ -36,38 +43,36 @@ export default {
 </script>
 
 <style scoped>
-.skills {
-  text-align: center;
-  padding: 20px;
+.skills-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
 }
 
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fff;
-  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(243, 243, 243, 0.9);
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 150px;
 }
 
-.skill-image {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-.skill-name {
-  font-size: 1.2em;
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
   color: #333;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between images */
+}
+
+img {
+  width: 100px; /* Adjust image size as needed */
+  height: auto;
 }
 </style>

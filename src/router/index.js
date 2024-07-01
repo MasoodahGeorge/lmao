@@ -4,6 +4,10 @@ import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ResumeView from '../views/ResumeView.vue';
 import SkillsView from '../views/SkillsView.vue';
+import TestimonialsView from '../views/TestimonialsView.vue'
+import ProjectsView from '../views/ProjectsView.vue'
+import ContactView from '../views/ContactView.vue'
+import FooterComp from '../components/FooterComp.vue';
 
 const routes = [
   {
@@ -36,7 +40,11 @@ const routes = [
       default: HomeView,
       about: AboutView,
       resume: ResumeView,
-      skills: SkillsView
+      skills: SkillsView,
+      testimonials:TestimonialsView,
+      projects:ProjectsView,
+      contact:ContactView,
+      FooterComp:FooterComp
     }
   },
 ];
