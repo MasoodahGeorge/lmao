@@ -1,6 +1,6 @@
 <template>
   <nav class="nav-sec">
-    <div class="fixed-top">
+    <div class="fixed-top" :class="{'scrolled': isScrolled}">
       <nav class="navbar navbar-expand-lg" id="nv">
         <div class="container-fluid">
           <router-link to="/" class="navbar-brand">
@@ -50,22 +50,46 @@
 <script>
 export default {
   name: 'NavbarComp',
+  data() {
+    return {
+      isScrolled: false
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > 50;
+    }
+  }
 };
 </script>
 
 <style scoped>
-.d-inline-block {
-  width: 100%;
-  height: 60px;
+.fixed-top {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
-#nv {
-  background-color: #F3F3F3;
-  height: 50%;
+.fixed-top.scrolled {
+  background-color: rgba(89, 52, 118, 0.7); /* Change to desired color when scrolled */
+}
+
+.navbar {
+  padding: 1rem 1rem;
+}
+
+.d-inline-block {
+  width: 100%;
+  height: 30px;
 }
 
 .offcanvas-body {
-  color: rgb(90, 90, 90);
+  color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

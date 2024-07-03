@@ -6,7 +6,7 @@
 
   <div id="app">
     <Navbar/>
-    <router-view></router-view>
+     <router-view></router-view>
   </div>
   <!-- <router-view/> -->
 
@@ -53,6 +53,26 @@ export default {
 </script>
 
 <style scoped>
+#about-section{
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/Untitled%20design%20(13)%20copy.png?raw=true');
+  height: 80vh;
+}
+#resume-section{
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/Untitled%20design%20(15).png?raw=true');
+}
+#skills-section{
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/0.png?raw=true');
+}
+#testimonials-section{
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/0.png?raw=true');
+}
+#projects-section{
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/3.png?raw=true');
+}
+#contact-section{
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/4.png?raw=true');
+}
+
 #app {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -61,13 +81,9 @@ export default {
   color: #2c3e50;
   background-color:#F3F3F3;
   /* background-image: url('https://i.postimg.cc/XYTyBpTf/Untitled-design-8.png'); */
-  background-image: url('https://raw.githubusercontent.com/MasoodahGeorge/p3img/main/Untitled%20design%20(11).png');
+  /* background-image: url('https://raw.githubusercontent.com/MasoodahGeorge/p3img/main/Untitled%20design%20(11).png'); */
   /* background-size: cover; */
   /* background-image: repeat; */
-}
-
-nav {
-  padding: 30px;
 }
 
 nav a {

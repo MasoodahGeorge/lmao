@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #F3F3F3;
+    background-color: #18325B;
     color: rgb(90, 90, 90);
     width: 100%;
     text-align: center;

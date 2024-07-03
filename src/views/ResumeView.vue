@@ -2,12 +2,17 @@
   <div class="resume" id="resume">
     <BR></BR>
     <BR></BR>
+    <BR></BR>
+    <BR></BR>
     <div class="resume-container">
       <h1>{{ resume.heading }}</h1>
-      <div v-for="(item, index) in resume.timeline" :key="index" class="timeline-item">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.description }}</p>
-        <span>{{ item.duration }}</span>
+      <div class="timeline">
+        <div v-for="(item, index) in resume.timeline" :key="index" :id="'item' + (index + 1)" class="timeline-item" :class="{ visible: item.visible }">
+          <div class="timeline-content">
+            <h2>{{ item.duration }}</h2>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -17,69 +22,125 @@
 import axios from 'axios';
 
 export default {
-name: 'ResumeView',
-data() {
-  return {
-    resume: {
-      heading: "",
-      timeline: []
+  name: 'ResumeView',
+  data() {
+    return {
+      resume: {
+        heading: "",
+        timeline: []
+      }
+    };
+  },
+  mounted() {
+    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+      .then(response => {
+        this.resume = response.data.resume; // Assuming your JSON structure has a 'resume' object
+        // Initialize visibility state for each timeline item
+        this.resume.timeline = this.resume.timeline.map(item => ({
+          ...item,
+          visible: false
+        }));
+        this.initIntersectionObserver();
+      })
+      .catch(error => {
+        console.error('Error fetching resume data:', error);
+      });
+  },
+  methods: {
+    initIntersectionObserver() {
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.id.replace('item', '')) - 1;
+            this.resume.timeline[index].visible = true;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      this.$nextTick(() => {
+        this.resume.timeline.forEach((item, index) => {
+          const element = document.getElementById(`item${index + 1}`);
+          if (element) {
+            observer.observe(element);
+          }
+        });
+      });
     }
-  };
-},
-mounted() {
-  axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-    .then(response => {
-      this.resume = response.data.resume; // Assuming your JSON structure has a 'resume' object
-    })
-    .catch(error => {
-      console.error('Error fetching resume data:', error);
-    });
-}
+  }
 };
 </script>
 
 <style scoped>
 .resume {
-margin-top: 100px;
-padding: 20px;
-text-align: center;
+  text-align: center;
+  height: 100vh;
 }
 
-.resume-container{
-display: flex;
-flex-direction: column;
-align-items: center;
-background: rgba(243, 243, 243, 0.9); /* slightly transparent background */
-padding: 40px;
-border-radius: 10px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-max-width: 800px;
-margin: 0 auto;
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(243, 243, 243, 0.5); /* slightly transparent background */
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .timeline-item {
-margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: center;
 }
 
 h1 {
-font-size: 2.5em;
-margin-bottom: 20px;
-color: #333;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 h2 {
-font-size: 1.8em;
-margin-bottom: 10px;
-color: #806088;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #806088;
 }
 
 p {
-font-size: 1.2em;
-color: #666;
-}
-
-span {
-font-size: 1em;
-color: #999;
+  font-size: 1.2em;
+  color: #666;
 }
 </style>

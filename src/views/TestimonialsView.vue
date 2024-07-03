@@ -1,18 +1,35 @@
 <template>
-  <BR></BR>
-  <BR></BR>
   <div class="testimonials" id="testimonials">
-    <BR></BR>
+    <br />
     <div v-if="testimonials" class="testimonials-container">
       <h1>{{ testimonials.heading }}</h1>
-      <div class="testimonials-list">
-        <div v-for="(item, index) in testimonials.items" :key="index" class="card testimonial-card">
-          <img :src="item.image" class="card-img-top testimonial-image" :alt="item.name">
-          <div class="card-body">
-            <h3 class="card-title">{{ item.name }}</h3>
-            <p class="card-text">{{ item.testimonial }}</p>
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button v-for="(item, index) in testimonials.items" :key="index"
+                  type="button" data-bs-target="#carouselExampleCaptions"
+                  :data-bs-slide-to="index" :class="{ active: index === 0 }"
+                  aria-current="true" :aria-label="'Slide ' + (index + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+          <div v-for="(item, index) in testimonials.items" :key="index"
+               :class="['carousel-item', index === 0 ? 'active' : '']">
+            <div class="testimonial">
+              <img :src="item.image" class="d-block w-100 testimonial-image" :alt="item.name">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>{{ item.name }}</h5>
+                <p>{{ item.testimonial }}</p>
+              </div>
+            </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
     <div v-else class="loading">
@@ -51,15 +68,13 @@ export default {
   min-height: 100vh;
   padding: 20px;
   text-align: center;
-  /* background-color: rgba(243, 243, 243, 0.9); slightly transparent background */
 }
 
 .testimonials-container {
-  background: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 10px;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   width: 100%;
+  max-width: 800px; /* Adjust as needed */
   margin: 0 auto;
 }
 
@@ -69,47 +84,34 @@ h1 {
   color: #333;
 }
 
-.testimonials-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Ensure wrapping for smaller screens */
+.carousel {
+  width: 100%;
 }
 
-.testimonial-card {
-  flex: 1 1 15%; /* Adjust based on the desired number of cards per row */
-  max-width: 3  30%; /* Ensure the cards don't exceed 30% of the container's width */
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.carousel-item {
+  text-align: center;
 }
 
 .testimonial-image {
-  width: 100%;
-  height: 250px;
+  border-radius: 8px;
   object-fit: cover;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  height: 550px;
 }
 
-.card-body {
-  padding: 20px;
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity */
+  color: #fff; /* Adjust text color */
+  border-radius: 8px;
+  padding: 2%;
+  text-align: center;
 }
 
-.card-title {
-  font-size: 1.2em;
+.carousel-caption h5 {
+  font-size: 1.5em; /* Adjust title font size */
   margin-bottom: 10px;
-  color: #333;
 }
 
-.card-text {
-  font-size: 1em;
-  color: #666;
-}
-
-.loading {
-  font-size: 1.5em;
-  color: #999;
+.carousel-caption p {
+  font-size: 1.2em; /* Adjust text font size */
 }
 </style>

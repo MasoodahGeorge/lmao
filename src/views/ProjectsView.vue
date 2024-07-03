@@ -69,19 +69,20 @@ export default {
 <style scoped>
 .projects {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
+  height: 100vh;
+  padding: 5%;
 }
 
 .projects-container {
-  background: rgba(243, 243, 243, 0.9); /* slightly transparent background */
+  /* background: rgba(243, 243, 243, 0.9); slightly transparent background */
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   width: 100%;
   margin: 0 auto;
 }
@@ -134,6 +135,7 @@ h1 {
 
 .project-card:hover .overlay {
   opacity: 1;
+  border-radius: 8px;
 }
 
 .overlay button {

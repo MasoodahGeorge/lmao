@@ -65,12 +65,14 @@ export default {
 
 .contact-container {
   background:  rgba(243, 243, 243, 0.8); /* slightly transparent background */
-  padding: 40px;
-  /* border-radius: 10px; */
+  padding-right: 3%;
+  padding-left: 3%;
+  border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   /* max-width: 800px; */
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
+  margin-bottom: 5%;
 }
 
 h1 {
