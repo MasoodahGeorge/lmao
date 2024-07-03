@@ -21,8 +21,8 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #F3F3F3;
+    color: rgb(90, 90, 90);
     width: 100%;
     text-align: center;
   }

@@ -8,6 +8,7 @@ import TestimonialsView from '../views/TestimonialsView.vue'
 import ProjectsView from '../views/ProjectsView.vue'
 import ContactView from '../views/ContactView.vue'
 import FooterComp from '../components/FooterComp.vue';
+// import NavbarComp from '../components/NavbarComp.vue';
 
 const routes = [
   {
