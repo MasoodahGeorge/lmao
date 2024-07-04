@@ -89,7 +89,7 @@ export default {
 }
 
 .offcanvas-body {
-  color: white;
+  color: gray;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
