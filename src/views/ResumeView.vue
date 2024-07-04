@@ -19,7 +19,7 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   name: 'ResumeView',
@@ -32,21 +32,20 @@ export default {
     };
   },
   mounted() {
-  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      this.resume = data.resume; // Assuming your JSON structure has an 'resume' object
-    })
-    .catch(error => {
-      console.error('Error fetching resume data:', error);
-    });
-}
-,
+    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+      .then(response => {
+        this.resume = response.data.resume; // Assuming your JSON structure has a 'resume' object
+        // Initialize visibility state for each timeline item
+        this.resume.timeline = this.resume.timeline.map(item => ({
+          ...item,
+          visible: false
+        }));
+        this.initIntersectionObserver();
+      })
+      .catch(error => {
+        console.error('Error fetching resume data:', error);
+      });
+  },
   methods: {
     initIntersectionObserver() {
       const options = {
