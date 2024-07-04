@@ -76,7 +76,7 @@ export default {
 }
 
 .fixed-top.scrolled {
-  background-color: rgba(89, 52, 118, 0.7); /* Change to desired color when scrolled */
+  background-color: rgba(175, 142, 200, 0.7); /* Change to desired color when scrolled */
 }
 
 .navbar {
@@ -100,7 +100,7 @@ export default {
 }
 
 .nav-link:hover {
-  color: #F1BA9C;
+  color: #696969;
   transform: scale(1.1);
 }
 </style>

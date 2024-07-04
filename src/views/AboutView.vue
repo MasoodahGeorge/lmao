@@ -23,10 +23,11 @@
     </div>
   </div>
 </div>
+
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: 'AboutView',
@@ -36,14 +37,21 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-      .then(response => {
-        this.about = response.data.about; // Assuming your JSON structure has an 'about' object
-      })
-      .catch(error => {
-        console.error('Error fetching about data:', error);
-      });
-  }
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.about = data.about;
+    })
+    .catch(error => {
+      console.error('Error fetching about data:', error);
+    });
+}
+
 };
 </script>
 
@@ -93,4 +101,4 @@ p {
   font-size: 1.5em;
   color: #999;
 }
-</style>
+</style>{}

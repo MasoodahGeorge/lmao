@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: 'SkillsView',
@@ -32,14 +32,21 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json')
-      .then(response => {
-        this.skills = response.data.skills;
-      })
-      .catch(error => {
-        console.error('Error fetching skills data:', error);
-      });
-  }
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.skills = data.skills; // Assuming your JSON structure has an 'skills' object
+    })
+    .catch(error => {
+      console.error('Error fetching skills data:', error);
+    });
+}
+
 };
 </script>
 

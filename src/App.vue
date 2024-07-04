@@ -50,6 +50,7 @@ export default {
     FooterComp
   }
 };
+
 </script>
 
 <style scoped>

@@ -39,7 +39,7 @@
 
   
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: 'ProjectsView',
@@ -49,14 +49,21 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-      .then(response => {
-        this.projects = response.data.projects; // Assuming your JSON structure has a 'projects' object
-      })
-      .catch(error => {
-        console.error('Error fetching projects data:', error);
-      });
-  },
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.projects = data.projects; // Assuming your JSON structure has an 'projects' object
+    })
+    .catch(error => {
+      console.error('Error fetching projects data:', error);
+    });
+}
+,
   methods: {
     openLink(url) {
       window.open(url, '_blank');
@@ -80,7 +87,7 @@ export default {
 
 .projects-container {
   /* background: rgba(243, 243, 243, 0.9); slightly transparent background */
-  padding: 40px;
+  padding: 15%;
   border-radius: 10px;
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   width: 100%;

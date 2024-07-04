@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: 'ContactView',
@@ -38,14 +38,21 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-      .then(response => {
-        this.contact = response.data.contact; // Assuming your JSON structure has a 'contact' object
-      })
-      .catch(error => {
-        console.error('Error fetching contact data:', error);
-      });
-  }
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.contact = data.contact; // Assuming your JSON structure has an 'contact' object
+    })
+    .catch(error => {
+      console.error('Error fetching contact data:', error);
+    });
+}
+
 };
 </script>
 
@@ -64,7 +71,7 @@ export default {
 }
 
 .contact-container {
-  background:  rgba(243, 243, 243, 0.8); /* slightly transparent background */
+  background:  rgba(243, 243, 243, 0.5); /* slightly transparent background */
   padding-right: 3%;
   padding-left: 3%;
   border-radius: 10px;

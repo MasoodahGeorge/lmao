@@ -13,11 +13,15 @@
         <div class="carousel-inner">
           <div v-for="(item, index) in testimonials.items" :key="index"
                :class="['carousel-item', index === 0 ? 'active' : '']">
-            <div class="testimonial">
-              <img :src="item.image" class="d-block w-100 testimonial-image" :alt="item.name">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>{{ item.name }}</h5>
-                <p>{{ item.testimonial }}</p>
+            <div class="testimonial row">
+              <div class="col-md-4">
+                <img :src="item.image" class="d-block w-100 testimonial-image" :alt="item.name">
+              </div>
+              <div class="col-md-8">
+                <div class="testimonial-content">
+                  <h5>{{ item.name }}</h5>
+                  <p>{{ item.testimonial }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -39,7 +43,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: 'TestimonialsView',
@@ -49,14 +53,21 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-      .then(response => {
-        this.testimonials = response.data.testimonials; // Assuming your JSON structure has a 'testimonials' object
-      })
-      .catch(error => {
-        console.error('Error fetching testimonials data:', error);
-      });
-  }
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.testimonials = data.testimonials; // Assuming your JSON structure has an 'testimonials' object
+    })
+    .catch(error => {
+      console.error('Error fetching testimonials data:', error);
+    });
+}
+
 };
 </script>
 
@@ -71,10 +82,10 @@ export default {
 }
 
 .testimonials-container {
-  padding: 40px;
+  padding: 5%;
   border-radius: 10px;
   width: 100%;
-  max-width: 800px; /* Adjust as needed */
+  /* max-width: 50%; Adjust as needed */
   margin: 0 auto;
 }
 
@@ -98,20 +109,16 @@ h1 {
   height: 550px;
 }
 
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity */
-  color: #fff; /* Adjust text color */
+.testimonial-content {
+  padding: 20px;
+  background: rgba(243, 243, 243, 0.5); /* Adjust background color and opacity */
+  color: rgb(58, 58, 58); /* Adjust text color */
   border-radius: 8px;
-  padding: 2%;
-  text-align: center;
+  height: 100%;
+  align-content: center;
 }
 
-.carousel-caption h5 {
+.testimonial-content h5 {
   font-size: 1.5em; /* Adjust title font size */
-  margin-bottom: 10px;
-}
-
-.carousel-caption p {
-  font-size: 1.2em; /* Adjust text font size */
 }
 </style>

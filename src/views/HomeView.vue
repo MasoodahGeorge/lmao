@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 // import Navbar from '../components/NavbarComp.vue'
 
 export default {
@@ -23,14 +23,20 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
-      .then(response => {
-        this.home = response.data.home; // Assuming your JSON structure has a 'home' object
-      })
-      .catch(error => {
-        console.error('Error fetching home data:', error);
-      });
-  }
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.home = data.home;
+    })
+    .catch(error => {
+      console.error('Error fetching home data:', error);
+    });
+}
 };
 </script>
 
@@ -73,6 +79,7 @@ export default {
 h1 {
   margin: 10px 0;
   color: white;
+  font-size: 500%;
 }
 
 h2 {
@@ -84,4 +91,5 @@ h2 {
   font-size: 1.5em;
   color: #5d5d5d;
 }
+
 </style>
