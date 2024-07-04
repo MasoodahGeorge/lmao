@@ -49,7 +49,7 @@ export default {
     };
   },
   mounted() {
-  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json') // Replace with your API endpoint
+  fetch('https://raw.githubusercontent.com/MasoodahGeorge/lmao.json/main/data/data.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -57,7 +57,7 @@ export default {
       return response.json();
     })
     .then(data => {
-      this.projects = data.projects; // Assuming your JSON structure has an 'projects' object
+      this.projects = data.projects;
     })
     .catch(error => {
       console.error('Error fetching projects data:', error);

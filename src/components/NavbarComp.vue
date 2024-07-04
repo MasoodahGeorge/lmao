@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-lg" id="nv">
         <div class="container-fluid">
           <router-link to="/" class="navbar-brand">
-            <img src="https://i.postimg.cc/pLfnPJR0/B-1-removebg-preview.png" alt="Logo" class="d-inline-block align-text-top"/>
+            <img src="https://github.com/MasoodahGeorge/p3img/blob/main/mg-removebg-preview.png?raw=true" alt="Logo" class="d-inline-block align-text-top"/>
           </router-link>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -89,7 +89,7 @@ export default {
 }
 
 .offcanvas-body {
-  color: gray;
+  color: rgb(255, 255, 255);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
