@@ -77,7 +77,6 @@ export default {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
   text-align: center;
 }
 
@@ -90,8 +89,7 @@ export default {
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: #333;
 }
 
@@ -106,19 +104,13 @@ h1 {
 .testimonial-image {
   border-radius: 8px;
   object-fit: cover;
-  height: 550px;
 }
 
 .testimonial-content {
-  padding: 20px;
   background: rgba(243, 243, 243, 0.5); /* Adjust background color and opacity */
   color: rgb(58, 58, 58); /* Adjust text color */
   border-radius: 8px;
   height: 100%;
   align-content: center;
-}
-
-.testimonial-content h5 {
-  font-size: 1.5em; /* Adjust title font size */
 }
 </style>

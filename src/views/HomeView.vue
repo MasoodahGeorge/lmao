@@ -67,29 +67,28 @@ export default {
   padding-top: 5%;
   padding-bottom: 5%;
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
-  border-radius:10px ;
+  border-radius:10px;
 }
 
 .profile-image {
-  width: 300px;
-  height: 300px;
+  width: 80%;
+  height: 50%;
   margin-bottom: 20px;
 }
 
 h1 {
-  margin: 10px 0;
+  margin: 0;
   color: white;
   font-size: 500%;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 100%;
   color: white;
 }
 
 .loading {
-  font-size: 1.5em;
+  font-size: 100%;
   color: #5d5d5d;
 }
-
 </style>

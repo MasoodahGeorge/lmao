@@ -91,8 +91,7 @@ export default {
   background: rgba(243, 243, 243, 0.5); /* slightly transparent background */
   padding: 5%;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -109,7 +108,7 @@ export default {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 2%;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
@@ -122,27 +121,22 @@ export default {
 
 .timeline-content {
   background: #fff;
-  padding: 20px;
+  padding: 5%;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  width: 100%;
   text-align: center;
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
   color: #333;
 }
 
 h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
   color: #806088;
 }
 
 p {
-  font-size: 1.2em;
   color: #666;
 }
 </style>

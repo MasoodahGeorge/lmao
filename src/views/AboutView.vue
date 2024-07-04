@@ -73,10 +73,9 @@ export default {
   flex-direction: column;
   align-items: center;
   background: rgba(243, 243, 243, 0.5); /* slightly transparent background */
-  padding: 40px;
+  padding: 5%;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 

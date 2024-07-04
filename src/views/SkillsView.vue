@@ -5,7 +5,7 @@
     <div class="skills-container">
       <h1>{{ skills.heading }}</h1>
       <div class="row justify-content-center">
-        <div v-for="skill in skills.items" :key="skill.name" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div v-for="skill in skills.items" :key="skill.name" class="col-lg col-md-4 col-sm-6 mb-4">
           <div class="card">
             <img :src="skill.image" :alt="skill.name" class="card-img-top" />
             <div class="card-body">
@@ -61,11 +61,10 @@ export default {
   margin: 0 auto;
   background-color: rgba(243, 243, 243, 0.5);
   border-radius: 10px;
-  padding: 20px; /* Adjust padding as needed */
+  padding: 2%; /* Adjust padding as needed */
 }
 
 h1 {
-  font-size: 2.5em;
   color: #333;
 }
 
@@ -81,8 +80,6 @@ h1 {
 .card-img-top {
   width: 100%;
   height: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 .card-body {
