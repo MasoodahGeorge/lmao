@@ -100,4 +100,71 @@ p {
   font-size: 1.5em;
   color: #999;
 }
-</style>{}
+
+@media only screen and (max-width: 300px) {
+  .profile-image {
+    height: 20vh;
+    width: 100%;
+  }.about-container {
+      padding: 3%;
+    }
+    h1 {
+      font-size: 2em;
+  
+    }
+    p {
+      font-size: 100%;
+    }
+  }
+
+  /* Medium screens (max-width: 600px) */
+  @media only screen and (max-width: 600px) {
+   .profile-image {
+      height: 30vh;
+      width: 80%;
+    }
+   .about-container {
+      padding: 4%;
+    }
+    h1 {
+      font-size: 2.2em;
+    }
+    p {
+      font-size: 1.1em;
+    }
+  }
+
+  /* Large screens (max-width: 900px) */
+  @media only screen and (max-width: 900px) {
+   .profile-image {
+      height: 40vh;
+      width: 60%;
+    }
+   .about-container {
+      padding: 5%;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  }
+
+  /* Extra large screens (min-width: 1200px) */
+  @media only screen and (min-width: 1200px) {
+   .profile-image {
+      height: 50vh;
+      width: 50%;
+    }
+   .about-container {
+      padding: 6%;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  }
+</style>

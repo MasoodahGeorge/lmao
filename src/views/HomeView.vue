@@ -47,10 +47,9 @@ export default {
   align-items: center;
   min-height: 100vh;
     /* started changes */
-  background-image: url('https://raw.githubusercontent.com/MasoodahGeorge/p3img/main/Untitled%20design%20(12).png');
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/lmaoo.png?raw=true');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
   /* background-size: cover;
   background-repeat: repeat-y; */
   text-align: center;
@@ -70,11 +69,6 @@ export default {
   border-radius:10px;
 }
 
-.profile-image {
-  width: 80%;
-  height: 50%;
-  margin-bottom: 20px;
-}
 
 h1 {
   margin: 0;
@@ -91,4 +85,242 @@ h2 {
   font-size: 100%;
   color: #5d5d5d;
 }
+
+@media only screen and (min-width: 300px) {
+  .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    /* started changes */
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/lmaoo.png?raw=true');
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  /* background-size: cover;
+  background-repeat: repeat-y; */
+  text-align: center;
+}
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: rgba(243, 243, 243, 0.9);
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius:10px; */
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 300%;
+}
+
+h2 {
+  margin-top: 5%;
+  font-size: 80%;
+  color: white;
+}
+
+.loading {
+  font-size: 100%;
+  color: #5d5d5d;
+}
+}
+
+@media only screen and (min-width: 481px) {
+  .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+    /* started changes */
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/lmaoo.png?raw=true');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: cover;
+  background-repeat: repeat-y; */
+  text-align: center;
+}
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: rgba(243, 243, 243, 0.9); */
+  /* padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius:10px; */
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 300%;
+}
+
+h2 {
+  font-size: 80%;
+  color: white;
+}
+
+.loading {
+  font-size: 100%;
+  color: #5d5d5d;
+}
+}
+
+/* Example of targeting smaller tablets and larger phones */
+@media only screen and (min-width: 641px) {
+  .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+    /* started changes */
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/lmaoo.png?raw=true');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: cover;
+  background-repeat: repeat-y; */
+  text-align: center;
+}
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: rgba(243, 243, 243, 0.9); */
+  /* padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius:10px; */
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 300%;
+}
+
+h2 {
+  font-size: 80%;
+  color: white;
+}
+
+.loading {
+  font-size: 100%;
+  color: #5d5d5d;
+}
+}
+
+/* Example of targeting tablets and larger phones */
+@media only screen and (min-width: 769px) {
+  .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+    /* started changes */
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/lmaoo.png?raw=true');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: cover;
+  background-repeat: repeat-y; */
+  text-align: center;
+}
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: rgba(243, 243, 243, 0.9); */
+  /* padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius:10px; */
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 300%;
+}
+
+h2 {
+  font-size: 80%;
+  color: white;
+}
+
+.loading {
+  font-size: 100%;
+  color: #5d5d5d;
+}}
+
+/* Example of targeting tablets and smaller desktops */
+@media only screen and (min-width: 1025px) {
+  .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+    /* started changes */
+  background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/lmaoo.png?raw=true');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: cover;
+  background-repeat: repeat-y; */
+  text-align: center;
+}
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: rgba(243, 243, 243, 0.9); */
+  /* padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius:10px; */
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 500%;
+}
+
+h2 {
+  font-size: 100%;
+  color: white;
+}
+
+.loading {
+  font-size: 100%;
+  color: #5d5d5d;
+}}
+
 </style>

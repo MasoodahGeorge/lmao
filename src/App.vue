@@ -61,7 +61,6 @@ export default {
 <style scoped>
 #about-section {
   background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/Untitled%20design%20(13)%20copy.png?raw=true');
-  height: 80vh;
 }
 #resume-section {
   background-image: url('https://github.com/MasoodahGeorge/p3img/blob/main/Untitled%20design%20(15).png?raw=true');
@@ -102,7 +101,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 132, 228); /* Optional: add a semi-transparent background */
+  background: rgb(255, 172, 237); /* Optional: add a semi-transparent background */
   z-index: 1000; /* Ensure it's above other content */
 }
 </style>

@@ -172,6 +172,7 @@ h1 {
     align-items: center;
     gap: 3%;
 }
+
 .overlay button:hover {
   background-color: #7fa39b;
 }

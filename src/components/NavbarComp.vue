@@ -71,7 +71,7 @@ export default {
 
 <style scoped>
 .fixed-top {
-  background-color: transparent;
+  /* background-color: transparent; */
   transition: background-color 0.3s ease;
 }
 
@@ -81,6 +81,7 @@ export default {
 
 .navbar {
   padding: 1rem 1rem;
+  background-color: transparent;
 }
 
 .d-inline-block {
@@ -88,8 +89,9 @@ export default {
   height: 30px;
 }
 
-.offcanvas-body {
-  color: rgb(255, 255, 255);
+.offcanvas-body:not(.navbar-nav) {
+  /* background-color: rgba(175, 142, 200, 0.7); */
+  color: rgb(51, 51, 51);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
