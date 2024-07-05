@@ -82,7 +82,6 @@ export default {
   background-size: cover;
   text-align: center;
   height: 100vh;
-  padding: 5%;
 }
 
 .projects-container {
@@ -172,6 +171,7 @@ h1 {
     align-items: center;
     gap: 3%;
 }
+
 
 .overlay button:hover {
   background-color: #7fa39b;
